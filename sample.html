@@ -8,6 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -52,16 +53,28 @@
       <div class="text-3xl font-bold">
         <span class="text-white">Free</span><span class="text-yellow-400">Tasker</span>
       </div>
-      <nav class="hidden md:flex space-x-8">
+      <!-- Mobile Menu Toggle -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-white text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <!-- Navigation -->
+      <nav id="menu" class="hidden md:flex space-x-8">
         <a href="#" class="hover:text-yellow-300">Home</a>
         <a href="#" class="hover:text-yellow-300">Browse Projects</a>
         <a href="#" class="hover:text-yellow-300">Become a Freelancer</a>
         <a href="#" class="hover:text-yellow-300">Sign Up</a>
         <a href="#" class="hover:text-yellow-300">Log In</a>
       </nav>
-      <div class="md:hidden">
-        <i class="fas fa-bars text-white text-2xl"></i>
-      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800 text-white">
+      <a href="#" class="block py-2 px-4 hover:bg-gray-700">Home</a>
+      <a href="#" class="block py-2 px-4 hover:bg-gray-700">Browse Projects</a>
+      <a href="#" class="block py-2 px-4 hover:bg-gray-700">Become a Freelancer</a>
+      <a href="#" class="block py-2 px-4 hover:bg-gray-700">Sign Up</a>
+      <a href="#" class="block py-2 px-4 hover:bg-gray-700">Log In</a>
     </div>
   </header>
 
@@ -70,13 +83,13 @@
     <div class="skew-bg gradient-bg py-15 flex items-end">
       <div class="unskew container mx-auto flex flex-col md:flex-row items-center px-6">
         <div class="md:w-1/2 text-center md:text-left">
-          <h1 class="text-6xl font-extrabold mb-6 leading-tight">
+          <h1 class="text-4xl sm:text-6xl font-extrabold mb-6 leading-tight sm:mt-10">
             Where <span class="text-yellow-300">Dreams</span> Meet <span class="text-yellow-400">Talent</span>
           </h1>
           <p class="text-lg mb-8">
             Connect with top freelancers and complete your projects with unmatched quality.
           </p>
-          <div class="flex space-x-4">
+          <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
             <a href="#"
               class="px-8 py-4 bg-yellow-400 text-gray-900 font-semibold rounded-full button-glow hover:bg-yellow-300">Get
               Started</a>
@@ -87,73 +100,178 @@
         </div>
         <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center items-end">
           <img src="./assets/cover1.svg" alt="Hero Illustration"
-            class="mx-auto rounded-xl mb-3 transform rotate-[1.6deg]"> <!-- Rotation applied -->
+            class="w-full md:w-auto mx-auto rounded-xl mb-3 transform rotate-[1.6deg] hidden sm:block">
         </div>
       </div>
     </div>
   </section>
-  <!-- Featured Projects -->
+  
+  
+  
+  <!-- How It Works Section -->
   <section class="py-20 bg-gray-900">
-    <div class="container mx-auto px-6">
-      <h2 class="text-5xl font-extrabold text-center mb-16 text-yellow-300">Featured Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Card 1 -->
-        <div class="bg-gray-900 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
-          <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Mobile App Development</h3>
-          <p class="text-gray-400 mb-6">Build an intuitive app for an e-commerce platform. UI and UX expertise required.</p>
-          <div class="flex justify-between items-center">
-            <span class="font-semibold text-yellow-300">Budget: $3000</span>
-            <a href="#" class="px-5 py-2 bg-yellow-400 text-gray-900 rounded-full hover:bg-yellow-300 transition duration-300">Details</a>
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-yellow-300 mb-16">How It Works</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <!-- Step 1 -->
+        <div class="p-8 bg-gray-800 rounded-xl shadow-lg hover:scale-105 transform transition-transform duration-300">
+          <div class="flex justify-center mb-6">
+            <i class="fas fa-user-plus text-yellow-400 text-6xl"></i>
           </div>
+          <h3 class="text-2xl font-bold text-yellow-300 mb-4">Sign Up</h3>
+          <p class="text-gray-400">Create a free account to get started and explore opportunities tailored to your skills.</p>
         </div>
-        <!-- Card 2 -->
-        <div class="bg-gray-900 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
-          <h3 class="text-2xl font-semibold text-yellow-400 mb-4">AI-Powered Chatbot</h3>
-          <p class="text-gray-400 mb-6">Develop a chatbot for customer support using AI technologies like NLP.</p>
-          <div class="flex justify-between items-center">
-            <span class="font-semibold text-yellow-300">Budget: $5000</span>
-            <a href="#" class="px-5 py-2 bg-yellow-400 text-gray-900 rounded-full hover:bg-yellow-300 transition duration-300">Details</a>
+        <!-- Step 2 -->
+        <div class="p-8 bg-gray-800 rounded-xl shadow-lg hover:scale-105 transform transition-transform duration-300">
+          <div class="flex justify-center mb-6">
+            <i class="fas fa-briefcase text-yellow-400 text-6xl"></i>
           </div>
+          <h3 class="text-2xl font-bold text-yellow-300 mb-4">Post or Apply</h3>
+          <p class="text-gray-400">Post a project or browse opportunities and apply to work with trusted professionals.</p>
         </div>
-        <!-- Card 3 -->
-        <div class="bg-gray-900 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
-          <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Website Redesign</h3>
-          <p class="text-gray-400 mb-6">Revamp a corporate website to enhance performance and user engagement.</p>
-          <div class="flex justify-between items-center">
-            <span class="font-semibold text-yellow-300">Budget: $4000</span>
-            <a href="#" class="px-5 py-2 bg-yellow-400 text-gray-900 rounded-full hover:bg-yellow-300 transition duration-300">Details</a>
+        <!-- Step 3 -->
+        <div class="p-8 bg-gray-800 rounded-xl shadow-lg hover:scale-105 transform transition-transform duration-300">
+          <div class="flex justify-center mb-6">
+            <i class="fas fa-handshake text-yellow-400 text-6xl"></i>
           </div>
-        </div>
-        <!-- Card 4 -->
-        <div class="bg-gray-900 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
-          <h3 class="text-2xl font-semibold text-yellow-400 mb-4">E-Learning Platform</h3>
-          <p class="text-gray-400 mb-6">Create a robust e-learning solution with features for live classes and assessments.</p>
-          <div class="flex justify-between items-center">
-            <span class="font-semibold text-yellow-300">Budget: $6000</span>
-            <a href="#" class="px-5 py-2 bg-yellow-400 text-gray-900 rounded-full hover:bg-yellow-300 transition duration-300">Details</a>
-          </div>
-        </div>
-        <!-- Card 5 -->
-        <div class="bg-gray-900 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
-          <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Cloud Migration</h3>
-          <p class="text-gray-400 mb-6">Migrate on-premise infrastructure to a cloud-based solution seamlessly.</p>
-          <div class="flex justify-between items-center">
-            <span class="font-semibold text-yellow-300">Budget: $8000</span>
-            <a href="#" class="px-5 py-2 bg-yellow-400 text-gray-900 rounded-full hover:bg-yellow-300 transition duration-300">Details</a>
-          </div>
-        </div>
-        <!-- Card 6 -->
-        <div class="bg-gray-900 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
-          <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Blockchain Solution</h3>
-          <p class="text-gray-400 mb-6">Develop a decentralized blockchain application for secure transactions.</p>
-          <div class="flex justify-between items-center">
-            <span class="font-semibold text-yellow-300">Budget: $10000</span>
-            <a href="#" class="px-5 py-2 bg-yellow-400 text-gray-900 rounded-full hover:bg-yellow-300 transition duration-300">Details</a>
-          </div>
+          <h3 class="text-2xl font-bold text-yellow-300 mb-4">Collaborate</h3>
+          <p class="text-gray-400">Connect and collaborate effectively to bring your projects to life seamlessly.</p>
         </div>
       </div>
     </div>
   </section>
+
+  
+  
+  
+  
+  <!-- Featured Projects -->
+
+<!-- Featured Projects -->
+<section class="py-20 bg-gray-900">
+  <div class="container mx-auto px-6">
+    <h2 class="text-5xl font-extrabold text-center mb-16 text-yellow-300">Featured Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="bg-gray-900 p-8 rounded-xl shadow-lg border-2 border-yellow-300 transform hover:scale-105 transition-transform duration-300">
+        <div class="flex justify-center mb-4">
+          <i class="fas fa-mobile-alt text-yellow-300 text-4xl"></i>
+        </div>
+        <h3 class="text-2xl font-semibold text-yellow-400 mb-4 text-center">Mobile App Development</h3>
+        <p class="text-gray-400 mb-6 text-center">Build an intuitive app for an e-commerce platform. UI and UX expertise required.</p>
+        <div class="flex justify-between items-center">
+          <span class="font-semibold text-yellow-300">Budget: $3000</span>
+          <a href="#" class="px-5 py-2 bg-yellow-400 text-gray-900 rounded-full hover:bg-yellow-300 transition duration-300">Details</a>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="bg-gray-900 p-8 rounded-xl shadow-lg border-2 border-yellow-300 transform hover:scale-105 transition-transform duration-300">
+        <div class="flex justify-center mb-4">
+          <i class="fas fa-robot text-yellow-300 text-4xl"></i>
+        </div>
+        <h3 class="text-2xl font-semibold text-yellow-400 mb-4 text-center">AI-Powered Chatbot</h3>
+        <p class="text-gray-400 mb-6 text-center">Develop a chatbot for customer support using AI technologies like NLP.</p>
+        <div class="flex justify-between items-center">
+          <span class="font-semibold text-yellow-300">Budget: $5000</span>
+          <a href="#" class="px-5 py-2 bg-yellow-400 text-gray-900 rounded-full hover:bg-yellow-300 transition duration-300">Details</a>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="bg-gray-900 p-8 rounded-xl shadow-lg border-2 border-yellow-300 transform hover:scale-105 transition-transform duration-300">
+        <div class="flex justify-center mb-4">
+          <i class="fas fa-desktop text-yellow-300 text-4xl"></i>
+        </div>
+        <h3 class="text-2xl font-semibold text-yellow-400 mb-4 text-center">Website Redesign</h3>
+        <p class="text-gray-400 mb-6 text-center">Revamp a corporate website to enhance performance and user engagement.</p>
+        <div class="flex justify-between items-center">
+          <span class="font-semibold text-yellow-300">Budget: $4000</span>
+          <a href="#" class="px-5 py-2 bg-yellow-400 text-gray-900 rounded-full hover:bg-yellow-300 transition duration-300">Details</a>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="bg-gray-900 p-8 rounded-xl shadow-lg border-2 border-yellow-300 transform hover:scale-105 transition-transform duration-300">
+        <div class="flex justify-center mb-4">
+          <i class="fas fa-chalkboard-teacher text-yellow-300 text-4xl"></i>
+        </div>
+        <h3 class="text-2xl font-semibold text-yellow-400 mb-4 text-center">E-Learning Platform</h3>
+        <p class="text-gray-400 mb-6 text-center">Create a robust e-learning solution with features for live classes and assessments.</p>
+        <div class="flex justify-between items-center">
+          <span class="font-semibold text-yellow-300">Budget: $6000</span>
+          <a href="#" class="px-5 py-2 bg-yellow-400 text-gray-900 rounded-full hover:bg-yellow-300 transition duration-300">Details</a>
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="bg-gray-900 p-8 rounded-xl shadow-lg border-2 border-yellow-300 transform hover:scale-105 transition-transform duration-300">
+        <div class="flex justify-center mb-4">
+          <i class="fas fa-cloud-upload-alt text-yellow-300 text-4xl"></i>
+        </div>
+        <h3 class="text-2xl font-semibold text-yellow-400 mb-4 text-center">Cloud Migration</h3>
+        <p class="text-gray-400 mb-6 text-center">Migrate on-premise infrastructure to a cloud-based solution seamlessly.</p>
+        <div class="flex justify-between items-center">
+          <span class="font-semibold text-yellow-300">Budget: $8000</span>
+          <a href="#" class="px-5 py-2 bg-yellow-400 text-gray-900 rounded-full hover:bg-yellow-300 transition duration-300">Details</a>
+        </div>
+      </div>
+      <!-- Card 6 -->
+      <div class="bg-gray-900 p-8 rounded-xl shadow-lg border-2 border-yellow-300 transform hover:scale-105 transition-transform duration-300">
+        <div class="flex justify-center mb-4">
+          <i class="fas fa-lock text-yellow-300 text-4xl"></i>
+        </div>
+        <h3 class="text-2xl font-semibold text-yellow-400 mb-4 text-center">Blockchain Solution</h3>
+        <p class="text-gray-400 mb-6 text-center">Develop a decentralized blockchain application for secure transactions.</p>
+        <div class="flex justify-between items-center">
+          <span class="font-semibold text-yellow-300">Budget: $10000</span>
+          <a href="#" class="px-5 py-2 bg-yellow-400 text-gray-900 rounded-full hover:bg-yellow-300 transition duration-300">Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-20 bg-gray-900">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-5xl font-extrabold text-yellow-300 mb-16">What Our Users Say</h2>
+    <div class="relative">
+      <!-- Testimonial Card -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <!-- Testimonial 1 -->
+        <div class="p-8 bg-gray-800 rounded-xl shadow-lg hover:scale-105 transform transition-transform duration-300">
+          <div class="flex justify-center mb-6">
+            <img src="./assets/sample1.jpg" alt="User Photo" 
+                 class="rounded-full border-4 border-yellow-300 w-12 h-12 object-cover">
+          </div>
+          <h3 class="text-xl font-bold text-yellow-300 mb-4">Jackson N</h3>
+          <p class="text-gray-400 mb-6">"FreeTasker connected me with the perfect freelancer for my project. The process was smooth, and the results were outstanding!"</p>
+          <span class="text-yellow-300">★★★★★</span>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="p-8 bg-gray-800 rounded-xl shadow-lg hover:scale-105 transform transition-transform duration-300">
+          <div class="flex justify-center mb-6">
+            <img src="./assets/sample2.jpg" alt="User Photo" 
+                 class="rounded-full border-4 border-yellow-300 w-12 h-12 object-cover">
+          </div>
+          <h3 class="text-xl font-bold text-yellow-300 mb-4">John Ben</h3>
+          <p class="text-gray-400 mb-6">"As a freelancer, this platform has boosted my career. The projects are exciting, and payments are always timely!"</p>
+          <span class="text-yellow-300">★★★★★</span>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="p-8 bg-gray-800 rounded-xl shadow-lg hover:scale-105 transform transition-transform duration-300">
+          <div class="flex justify-center mb-6">
+            <img src="./assets/sample3.jpg" alt="User Photo" 
+                 class="rounded-full border-4 border-yellow-300 w-12 h-12 object-cover">
+          </div>
+          <h3 class="text-xl font-bold text-yellow-300 mb-4">Alex Brown</h3>
+          <p class="text-gray-400 mb-6">"A game-changer for finding talented professionals. Highly recommend FreeTasker for quality services."</p>
+          <span class="text-yellow-300">★★★★★</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+
   <!-- Call to Action -->
   <section class="gradient-bg py-20">
     <div class="container mx-auto text-center text-white px-6">
@@ -177,7 +295,13 @@
       </div>
     </div>
   </footer>
-
+  <script>
+    // Toggle Mobile Menu
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+      const menu = document.getElementById("mobile-menu");
+      menu.classList.toggle("hidden");
+    });
+  </script>
 </body>
 
 </html>
